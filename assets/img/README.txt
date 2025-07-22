@@ -1,0 +1,1 @@
+Aquí puedes colocar los íconos de corazones, imágenes de fondo y otros recursos gráficos para el reto de 30 días de amor. 

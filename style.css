@@ -1,0 +1,139 @@
+/* Paleta base (modo claro) */
+:root {
+  --color-bg: #e6eaff;
+  --color-bg2: #f5f7fa;
+  --color-primary: #5a6dff;
+  --color-secondary: #b8baff;
+  --color-accent: #7f53ac;
+  --color-card: #fff;
+  --color-text: #3a3a5a;
+  --color-progress: #5a6dff;
+  --color-completed: #b8baff;
+  --color-locked: #cfd8dc;
+  --color-missed: #b23a48;
+  --color-missed-bg: #e3b6c1;
+  --color-btn: #7f53ac;
+  --color-btn-hover: #5a6dff;
+}
+
+/* Modo oscuro */
+body.dark {
+  --color-bg: #23243a;
+  --color-bg2: #2e2f4a;
+  --color-primary: #7f53ac;
+  --color-secondary: #5a6dff;
+  --color-accent: #b8baff;
+  --color-card: #2e2f4a;
+  --color-text: #f5f7fa;
+  --color-progress: #b8baff;
+  --color-completed: #5a6dff;
+  --color-locked: #44475a;
+  --color-missed: #ff6f91;
+  --color-missed-bg: #3a3a5a;
+  --color-btn: #5a6dff;
+  --color-btn-hover: #7f53ac;
+}
+
+body {
+  font-family: cursive, Arial, sans-serif;
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg2) 100%);
+  min-height: 100vh;
+  position: relative;
+  color: var(--color-text);
+}
+
+/* Fondo decorativo de corazones SVG */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><g opacity="0.08"><text x="10" y="60" font-size="60" fill="%23d63384">❤</text><text x="200" y="200" font-size="90" fill="%236f42c1">❤</text><text x="80" y="400" font-size="70" fill="%23d63384">❤</text><text x="300" y="100" font-size="80" fill="%236f42c1">❤</text></g></svg>') repeat;
+  pointer-events: none;
+}
+
+#greeting {
+  z-index: 1;
+  color: var(--color-accent);
+}
+
+/* Cartas estilo Bootstrap con animación y corazón */
+.card-reto {
+  background: var(--color-card);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(214,51,132,0.10), 0 1.5px 0 #f8f9fa;
+  border: 2px solid #f8f9fa;
+  min-width: 120px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  animation: cardPop 0.5s;
+}
+.card-reto:hover, .card-reto:active {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 8px 32px #d6338433;
+}
+.card-reto.completed {
+  background: var(--color-completed);
+  color: var(--color-accent);
+  border: 2px solid var(--color-primary);
+}
+.card-reto.completed::after {
+  content: '❤';
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+.card-reto.locked, .card-reto.missed {
+  background: var(--color-locked);
+  color: #adb5bd;
+  border: 2px dashed var(--color-locked);
+  cursor: not-allowed;
+}
+.card-reto .lock {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+}
+.card-reto .day-number {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  position: absolute;
+  left: 12px;
+  top: 10px;
+}
+@keyframes cardPop {
+  0% { transform: scale(0.7) rotate(-5deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Toast Bootstrap personalizado */
+#alerta-toast .toast-body {
+  font-size: 1.1rem;
+  font-family: cursive, Arial, sans-serif;
+}
+
+/* Responsive para cartas */
+@media (max-width: 600px) {
+  .card-reto {
+    min-width: 44vw;
+    min-height: 70px;
+    font-size: 1rem;
+  }
+} 
