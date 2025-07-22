@@ -112,6 +112,16 @@ const confirmResetBtn = document.getElementById('confirm-reset');
 const resetModalEl = document.getElementById('reset-modal');
 const resetModal = new bootstrap.Modal(resetModalEl);
 
+// Mostrar modal de información de autoría
+const infoBtn = document.getElementById('info-btn');
+const infoModal = document.getElementById('info-modal');
+if (infoBtn && infoModal) {
+  infoBtn.addEventListener('click', function() {
+    const modal = new bootstrap.Modal(infoModal);
+    modal.show();
+  });
+}
+
 // --- Estado global ---
 let nombres = obtenerDatos('nombres') || null;
 let progreso = obtenerDatos('progreso') || Array(TOTAL_DIAS).fill(false);
@@ -323,9 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
-    // Preferencia del sistema
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark ? 'dark' : 'light');
+    setTheme('light'); // Siempre tema claro por defecto
   }
 });
 

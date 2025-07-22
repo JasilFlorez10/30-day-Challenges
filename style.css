@@ -1,45 +1,50 @@
 /* Paleta base (modo claro) */
 :root {
-  --color-bg: #e6eaff;
-  --color-bg2: #f5f7fa;
-  --color-primary: #5a6dff;
-  --color-secondary: #b8baff;
-  --color-accent: #7f53ac;
+  --color-bg: #f7f8fa;
+  --color-bg2: #fff0f6;
+  --color-primary: #7f53ac;
+  --color-secondary: #ffb6b9;
+  --color-accent: #ff6f91;
   --color-card: #fff;
   --color-text: #3a3a5a;
-  --color-progress: #5a6dff;
+  --color-progress: #ff6f91;
   --color-completed: #b8baff;
-  --color-locked: #cfd8dc;
+  --color-locked: #e0e0e0;
   --color-missed: #b23a48;
-  --color-missed-bg: #e3b6c1;
+  --color-missed-bg: #ffe0ef;
   --color-btn: #7f53ac;
-  --color-btn-hover: #5a6dff;
+  --color-btn-hover: #ffb6b9;
 }
 
 /* Modo oscuro */
 body.dark {
   --color-bg: #23243a;
   --color-bg2: #2e2f4a;
-  --color-primary: #7f53ac;
-  --color-secondary: #5a6dff;
-  --color-accent: #b8baff;
+  --color-primary: #ffb6b9;
+  --color-secondary: #7f53ac;
+  --color-accent: #ff6f91;
   --color-card: #2e2f4a;
   --color-text: #f5f7fa;
-  --color-progress: #b8baff;
-  --color-completed: #5a6dff;
+  --color-progress: #ffb6b9;
+  --color-completed: #7f53ac;
   --color-locked: #44475a;
   --color-missed: #ff6f91;
   --color-missed-bg: #3a3a5a;
-  --color-btn: #5a6dff;
-  --color-btn-hover: #7f53ac;
+  --color-btn: #ffb6b9;
+  --color-btn-hover: #ff6f91;
 }
 
 body {
-  font-family: cursive, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg2) 100%);
   min-height: 100vh;
   position: relative;
   color: var(--color-text);
+}
+
+.cursiva {
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  font-style: italic;
 }
 
 /* Fondo decorativo de corazones SVG */
@@ -55,6 +60,32 @@ body::before {
 #greeting {
   z-index: 1;
   color: var(--color-accent);
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Botón flotante de info */
+#info-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 4000;
+  background: #fff;
+  color: #b23a48;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #ffd6e0;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#info-btn:hover {
+  background: #ffe0ef;
 }
 
 /* Cartas estilo Bootstrap con animación y corazón */
@@ -135,5 +166,13 @@ body::before {
     min-width: 44vw;
     min-height: 70px;
     font-size: 1rem;
+  }
+  #greeting {
+    font-size: 1.1rem;
+  }
+  #info-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
   }
 } 

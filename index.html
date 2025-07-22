@@ -93,11 +93,23 @@
     </div>
   </div>
 
-  <!-- Footer personalizado -->
-  <footer style="position:fixed; bottom:10px; right:16px; z-index:3000; font-size:0.98rem; color:#b23a48; background:rgba(255,255,255,0.7); border-radius:12px; padding:4px 14px; box-shadow:0 2px 8px #ffd6e0;">
-    Yolanda y Jasil ❤️<br>
-    <span style="font-size:0.85em; color:#b23a48;">Página exclusiva, prohibido copiar o reproducir.</span>
-  </footer>
+  <!-- Botón flotante de información -->
+  <button id="info-btn" title="Información" style="display:flex;align-items:center;justify-content:center;"><i class="bi bi-info-circle-fill"></i></button>
+
+  <!-- Modal de información de autoría -->
+  <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 text-center">
+        <button type="button" class="btn-close position-absolute end-0 top-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <h5 class="mb-2 text-danger">Yolanda y Jasil ❤️</h5>
+        <p style="font-size:0.98rem; color:#b23a48;">Página exclusiva, prohibido copiar o reproducir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Fonts para Dancing Script -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
   <script>
     document.addEventListener('copy', function(e) {
       e.preventDefault();
