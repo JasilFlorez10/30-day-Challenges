@@ -115,10 +115,18 @@ const resetModal = new bootstrap.Modal(resetModalEl);
 // Mostrar modal de información de autoría
 const infoBtn = document.getElementById('info-btn');
 const infoModal = document.getElementById('info-modal');
+let infoModalInstance = null;
 if (infoBtn && infoModal) {
   infoBtn.addEventListener('click', function() {
-    const modal = new bootstrap.Modal(infoModal);
-    modal.show();
+    if (!infoModalInstance) {
+      infoModalInstance = new bootstrap.Modal(infoModal);
+    }
+    // Si el modal está visible, ciérralo; si no, ábrelo
+    if (infoModal.classList.contains('show')) {
+      infoModalInstance.hide();
+    } else {
+      infoModalInstance.show();
+    }
   });
 }
 
