@@ -87,10 +87,7 @@ function obtenerDatos(key) {
   return data ? JSON.parse(data) : null;
 }
 function limpiarDatos() {
-  localStorage.removeItem('nombres');
-  localStorage.removeItem('progreso');
-  localStorage.removeItem('ultimoDiaAbierto');
-  localStorage.removeItem('fechaInicio'); // Limpiar fecha de inicio
+  localStorage.clear(); // Borra todo el almacenamiento local, incluyendo el tema
 }
 
 // --- Elementos DOM ---
