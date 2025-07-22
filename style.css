@@ -35,8 +35,8 @@ body.dark {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg2) 100%);
+  font-family: cursive;
+  background: licnear-gradient(135deg, var(--color-bg) 0%, var(--color-bg2) 100%);
   min-height: 100vh;
   position: relative;
   color: var(--color-text);
