@@ -185,34 +185,9 @@ body.dark #info-btn i {
     height: 44px;
     font-size: 1.3rem;
   }
-}
+} 
 
-#decor-heart-circle {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  width: 64px;
-  height: 64px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(214,51,132,0.10), 0 1.5px 0 #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 4100;
-}
-#decor-heart-circle i {
-  font-size: 2.2rem;
-  color: #d63384;
-}
-@media (max-width: 600px) {
-  #decor-heart-circle {
-    width: 44px;
-    height: 44px;
-    top: 10px;
-    right: 10px;
-  }
-  #decor-heart-circle i {
-    font-size: 1.5rem;
-  }
+.card-reto, .modal-content, #greeting, #challenge-title, #challenge-text, .toast-body {
+  font-family: cursive !important;
+  color: var(--color-text) !important;
 } 
