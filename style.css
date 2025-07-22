@@ -14,6 +14,7 @@
   --color-missed-bg: #ffe0ef;
   --color-btn: #7f53ac;
   --color-btn-hover: #ffb6b9;
+  --font-family: cursive;
 }
 
 /* Modo oscuro */
@@ -32,6 +33,7 @@ body.dark {
   --color-missed-bg: #3a3a5a;
   --color-btn: #ffb6b9;
   --color-btn-hover: #ff6f91;
+  --font-family: cursive;
 }
 
 body {
